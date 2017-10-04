@@ -1,0 +1,13 @@
+
+
+    <input mdInput type="search" class="mat-elevation-z4" placeholder="search..."
+    [formControl]="queryField"[mdAutocomplete]="auto"(keyup.enter)="onSubmitSearch()">
+    <md-autocomplete #auto="mdAutocomplete" class="mat-elevation-z4">
+      <div *ngIf="resultssug">
+      <md-option *ngFor="let item of resultssug['predictions']"[value]='item.description'
+      color="primary" background-color="white">
+        <span>{{item.description}}</span>
+      </md-option>
+      </div>
+
+    </md-autocomplete>
